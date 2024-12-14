@@ -1,26 +1,24 @@
+// Firebase config file (firebase-config.js)
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-// Your web app's Firebase configuration
+// Your Firebase config object
 const firebaseConfig = {
-  apiKey: "AIzaSyC5UNeFMQdkL-nHSpYBQAHY24cj9Wl76I0",
-  authDomain: "stockmarketpredictions-dcbf6.firebaseapp.com",
-  projectId: "stockmarketpredictions-dcbf6",
-  storageBucket: "stockmarketpredictions-dcbf6.appspot.com",
-  messagingSenderId: "708358532107",
-  appId: "1:708358532107:web:821bb76a5d564b7b74eb0e",
-  measurementId: "G-HBGBVPED86",
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize services
+// Export Firebase services
 export const auth = getAuth(app);
-export const provider = new GoogleAuthProvider(); // Add Google Auth Provider
 export const db = getFirestore(app);
 export const storage = getStorage(app);
-export const analytics = getAnalytics(app);
